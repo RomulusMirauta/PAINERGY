@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { usePainSlider } from '../hooks/usePainSlider';
 
 interface PainSliderProps {
     value: number;
@@ -6,53 +7,30 @@ interface PainSliderProps {
     isInfoOpen: boolean;
     cascadeIndex: number;
     onInfoOpen: (open: boolean) => void;
+    sliderWidth?: number;
+    sliderHeight?: number;
 }
 
-const PainSlider: React.FC<PainSliderProps> = ({ value, onChange, isInfoOpen, cascadeIndex, onInfoOpen }) => {
-    const [infoPos, setInfoPos] = useState({ x: 40, y: 40 + cascadeIndex * 64 });
-    React.useEffect(() => {
-        setInfoPos({ x: 40, y: 40 + cascadeIndex * 240 });
-    }, [cascadeIndex, isInfoOpen]);
-    React.useEffect(() => {
-        setInfoPos(pos => ({ x: pos.x, y: 40 + cascadeIndex * 150 }));
-    }, [cascadeIndex]);
-    const dragging = useRef(false);
-    const offset = useRef({ x: 0, y: 0 });
-    const [showValue, setShowValue] = useState(false);
+const PainSlider: React.FC<PainSliderProps> = ({ value, onChange, isInfoOpen, cascadeIndex, onInfoOpen, sliderWidth = 80, sliderHeight = 320 }) => {
+        const {
+            infoPos,
+            setInfoPos,
+            showValue,
+            setShowValue,
+            handleSliderMouseDown,
+            handleSliderMouseUp,
+            handleSliderTouchStart,
+            handleSliderTouchEnd,
+            handleMouseDown,
+            handleMouseMove,
+            handleMouseUp,
+        } = usePainSlider(cascadeIndex, isInfoOpen);
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        onChange(Number(event.target.value));
-    };
-
-    // Show value bubble only while dragging
-    const handleSliderMouseDown = () => setShowValue(true);
-    const handleSliderMouseUp = () => setShowValue(false);
-    const handleSliderTouchStart = () => setShowValue(true);
-    const handleSliderTouchEnd = () => setShowValue(false);
-
-    // Drag logic for info box
-    const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-        dragging.current = true;
-        offset.current = {
-            x: e.clientX - infoPos.x,
-            y: e.clientY - infoPos.y
+        const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+            onChange(Number(event.target.value));
         };
-        document.addEventListener('mousemove', handleMouseMove);
-        document.addEventListener('mouseup', handleMouseUp);
-    };
-    const handleMouseMove = (e: MouseEvent) => {
-        if (dragging.current) {
-            setInfoPos({
-                x: e.clientX - offset.current.x,
-                y: e.clientY - offset.current.y
-            });
-        }
-    };
-    const handleMouseUp = () => {
-        dragging.current = false;
-        document.removeEventListener('mousemove', handleMouseMove);
-        document.removeEventListener('mouseup', handleMouseUp);
-    };
+
+        const mobile = window.innerWidth <= 480;
 
     return (
         <div style={{ display: 'flex', 
@@ -60,7 +38,7 @@ const PainSlider: React.FC<PainSliderProps> = ({ value, onChange, isInfoOpen, ca
         alignItems: 'center', 
         justifyContent: 'center', 
         height: '100%' }}>
-            <div style={{ position: 'relative', width: '80px', height: '320px', background: '#ffebee', borderRadius: '16px', boxShadow: '0 4px 24px 0 rgba(244,67,54,0.08)', display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
+            <div style={{ position: 'relative', width: sliderWidth, height: sliderHeight, background: '#ffebee', borderRadius: '16px', boxShadow: '0 4px 24px 0 rgba(244,67,54,0.08)', display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
                 <div style={{
                     position: 'absolute',
                     bottom: 0,
@@ -87,7 +65,7 @@ const PainSlider: React.FC<PainSliderProps> = ({ value, onChange, isInfoOpen, ca
                         left: '50%',
                         top: '50%',
                         transform: 'translate(-50%, -50%) rotate(-90deg)',
-                        width: '280px',
+                        width: mobile ? '170px' : '280px',
                         height: '18px',
                         zIndex: 2,
                         background: 'transparent',
@@ -124,13 +102,13 @@ const PainSlider: React.FC<PainSliderProps> = ({ value, onChange, isInfoOpen, ca
                     <div style={{
                         position: 'absolute',
                         left: '50%',
-                        bottom: value === 100 ? '296px' : `${(value/100)*272 + 24}px`,
+                        bottom: mobile ? `${(value/150)*190 + 2}px` : `${(value/100)*250 + 10}px`,
                         transform: 'translateX(-50%)',
                         background: '#222',
                         color: '#fff',
                         borderRadius: '50%',
-                        width: '56px',
-                        height: '56px',
+                        width: mobile ? '44px' : '56px',
+                        height: mobile ? '44px' : '56px',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -142,22 +120,57 @@ const PainSlider: React.FC<PainSliderProps> = ({ value, onChange, isInfoOpen, ca
                 )}
                 {/* Info icon */}
             </div>
-            <div style={{ marginTop: '16px', fontWeight: 'bold', fontSize: '1.2em', letterSpacing: '2px', color: '#f44336ff', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                PAIN
-                <span style={{ marginTop: '4px', cursor: 'pointer', fontSize: '1.2em' }} title="Info about Pain" onClick={() => onInfoOpen(true)}>ℹ️</span>
-            </div>
+            <div style={{
+  textAlign: 'center',
+  marginTop: '12px',
+  fontWeight: 700,
+  fontSize: mobile ? '1em' : '1.2em',
+  letterSpacing: '2px',
+  color: '#f44336',
+}}>
+  PAIN
+</div>
+            <button
+  style={{
+    background: 'none',
+    border: 'none',
+    padding: 0,
+    marginTop: '8px',
+    cursor: 'pointer',
+    outline: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}
+  onClick={() => onInfoOpen(!isInfoOpen)}
+>
+  <span style={{
+    display: 'inline-block',
+    width: mobile ? '22px' : '32px',
+    height: mobile ? '22px' : '32px',
+    borderRadius: '50%',
+    border: '2px solid #2196f3',
+    background: '#10131a',
+    color: '#2196f3',
+    fontWeight: 600,
+    fontSize: mobile ? '1em' : '1.4em',
+    textAlign: 'center',
+    lineHeight: mobile ? '22px' : '32px',
+    boxSizing: 'border-box',
+  }}>i</span>
+</button>
             {isInfoOpen && (
                 <div
                     style={{
                         position: 'fixed',
                         left: infoPos.x,
-                        top: infoPos.y,
+                        top: (window.innerWidth <= 480 ? 120 : infoPos.y), // for mobile, appear lower under logo
                         background: '#222',
                         color: '#fff',
                         padding: '20px 32px',
                         borderRadius: '12px',
                         boxShadow: '0 2px 12px rgba(0,0,0,0.3)',
-                        zIndex: 9999,
+                        zIndex: 20000, // ensure above logo and all other elements
                         cursor: 'move',
                         minWidth: '200px'
                     }}
