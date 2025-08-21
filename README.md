@@ -12,19 +12,16 @@
 
 <br>
 
-### **Purpose:** Training - creating my first web app.
-
+## **Purposes** <br>
+### - Training - creating my first web app. <br> - Creating an app that can help people manage their stomach ache, by finding the balance between pain intensity, caffeine intake, required dilution and desired energy.
 
 <br>
 
+## DEMO
 
-### DEMO
+### Check out the live app here: [https:/painergy.vercel.app/](https://painergy.vercel.app/)
 
-#### Check out the live app here: [https:/painergy.vercel.app/](https://painergy.vercel.app/)
-
-<br><br>
-
-#### Screenshots
+### Here are some app screenshots:
 
 <a href="https://raw.githubusercontent.com/RomulusMirauta/PAINERGY/refs/heads/main/github/img/app_screenshot1.png">
   <img align="center"
@@ -34,15 +31,23 @@
 
 <br>
 
+<hr>
+
+<br>
+
 <a href="https://raw.githubusercontent.com/RomulusMirauta/PAINERGY/refs/heads/main/github/img/app_screenshot2.png">
   <img align="center"
     src="https://raw.githubusercontent.com/RomulusMirauta/PAINERGY/refs/heads/main/github/img/app_screenshot2.png"
     alt="logo" />
 </a>
 
-<br><br>
+<br>
 
-### Here are the main technologies used in this app:
+<hr>
+
+<br>
+
+## Here are the main technologies used in this app:
 - React (with TypeScript)
 - HTML5 & CSS3 (inline styles and custom styling)
 - JavaScript/TypeScript (for logic and components)
@@ -50,6 +55,7 @@
 - npm (for package management)
 - Modern ES6+ features (hooks, functional components)
 - Custom component architecture (PainSlider, CaffeineSlider, DilutionSlider, EnergySlider)
+
 
 
 
