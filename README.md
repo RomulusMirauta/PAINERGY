@@ -47,7 +47,7 @@
 
 <br>
 
-## Here are the main technologies used in this app:
+## Main technologies used in building this app
 - React (with TypeScript)
 - HTML5 & CSS3 (inline styles and custom styling)
 - JavaScript/TypeScript (for logic and components)
@@ -55,6 +55,7 @@
 - npm (for package management)
 - Modern ES6+ features (hooks, functional components)
 - Custom component architecture (PainSlider, CaffeineSlider, DilutionSlider, EnergySlider)
+
 
 
 
