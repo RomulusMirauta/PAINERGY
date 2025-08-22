@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useCaffeineSlider } from '../hooks/useCaffeineSlider';
+import SliderValueBubble from './SliderValueBubble';
 
 interface CaffeineSliderProps {
     value: number;
@@ -48,6 +49,7 @@ const CaffeineSlider: React.FC<CaffeineSliderProps> = ({ value, onChange, isInfo
                     }} />
                 <input
                     type="range"
+                    className="caffeine-slider"
                     min="0"
                     max="100"
                     value={value}
@@ -70,49 +72,25 @@ const CaffeineSlider: React.FC<CaffeineSliderProps> = ({ value, onChange, isInfo
                         WebkitAppearance: 'none',
                     }}
                 />
-                <style>{`
-                    .caffeine-slider::-webkit-slider-thumb {
-                        background: transparent !important;
-                        border: none !important;
-                        box-shadow: none !important;
-                        width: 0 !important;
-                        height: 0 !important;
-                    }
-                    .caffeine-slider::-moz-range-thumb {
-                        background: transparent !important;
-                        border: none !important;
-                        box-shadow: none !important;
-                        width: 0 !important;
-                        height: 0 !important;
-                    }
-                    .caffeine-slider::-ms-thumb {
-                        background: transparent !important;
-                        border: none !important;
-                        box-shadow: none !important;
-                        width: 0 !important;
-                        height: 0 !important;
-                    }
-                `}</style>
-                {showValue && (
-                    <div style={{
-                        position: 'absolute',
-                        left: '50%',
-                        bottom: mobile ? `${(value/150)*190 + 2}px` : `${(value/100)*250 + 10}px`,
-                        transform: 'translateX(-50%)',
-                        background: '#222',
-                        color: '#fff',
-                        borderRadius: '50%',
-                        width: mobile ? '44px' : '56px',
-                        height: mobile ? '44px' : '56px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontWeight: 'bold',
-                        fontSize: '1.3em',
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-                        zIndex: 3,
-                    }}>{value}</div>
-                )}
+                {/* Value bubble (always show, smooth at min/max) */}
+                {(() => {
+                  const bubbleHeight = mobile ? 44 : 56;
+                  const sliderHeightPx = sliderHeight;
+                  const margin = 8;
+                  // For value 0, set bubble lower (like Pain slider)
+                  let position = (value / 100) * (sliderHeightPx - bubbleHeight);
+                  if (value === 0) position = margin;
+                  return (
+                    <SliderValueBubble
+                      value={value}
+                      position={position}
+                      bubbleHeight={bubbleHeight}
+                      mobile={mobile}
+                      margin={margin}
+                      sliderHeightPx={sliderHeightPx}
+                    />
+                  );
+                })()}
             </div>
             <div style={{
   textAlign: 'center',

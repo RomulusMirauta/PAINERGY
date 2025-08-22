@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { usePainSlider } from '../hooks/usePainSlider';
+import SliderValueBubble from './SliderValueBubble';
 
 interface PainSliderProps {
     value: number;
@@ -12,32 +13,28 @@ interface PainSliderProps {
 }
 
 const PainSlider: React.FC<PainSliderProps> = ({ value, onChange, isInfoOpen, cascadeIndex, onInfoOpen, sliderWidth = 80, sliderHeight = 320 }) => {
-        const {
-            infoPos,
-            setInfoPos,
-            showValue,
-            setShowValue,
-            handleSliderMouseDown,
-            handleSliderMouseUp,
-            handleSliderTouchStart,
-            handleSliderTouchEnd,
-            handleMouseDown,
-            handleMouseMove,
-            handleMouseUp,
-        } = usePainSlider(cascadeIndex, isInfoOpen);
+    const {
+        infoPos,
+        setInfoPos,
+        showValue,
+        setShowValue,
+        handleSliderMouseDown,
+        handleSliderMouseUp,
+        handleSliderTouchStart,
+        handleSliderTouchEnd,
+        handleMouseDown,
+        handleMouseMove,
+        handleMouseUp,
+    } = usePainSlider(cascadeIndex, isInfoOpen);
 
-        const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-            onChange(Number(event.target.value));
-        };
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        onChange(Number(event.target.value));
+    };
 
-        const mobile = window.innerWidth <= 480;
+    const mobile = window.innerWidth <= 480;
 
     return (
-        <div style={{ display: 'flex', 
-        flexDirection: 'column', 
-        alignItems: 'center', 
-        justifyContent: 'center', 
-        height: '100%' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
             <div style={{ position: 'relative', width: sliderWidth, height: sliderHeight, background: '#ffebee', borderRadius: '16px', boxShadow: '0 4px 24px 0 rgba(244,67,54,0.08)', display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
                 <div style={{
                     position: 'absolute',
@@ -46,12 +43,13 @@ const PainSlider: React.FC<PainSliderProps> = ({ value, onChange, isInfoOpen, ca
                     width: '100%',
                     height: `${(value/100)*100}%`,
                     background: '#f44336',
-                    borderRadius: value >= 99 ? '16px' : '0 0 16px 16px', // fully rounded only when fill reaches/exceeds top
+                    borderRadius: value >= 99 ? '16px' : '0 0 16px 16px',
                     zIndex: 1,
                     transition: 'height 0.2s, border-radius 0.2s'
-                    }} />
+                }} />
                 <input
                     type="range"
+                    className="pain-slider"
                     min="0"
                     max="100"
                     value={value}
@@ -66,7 +64,7 @@ const PainSlider: React.FC<PainSliderProps> = ({ value, onChange, isInfoOpen, ca
                         top: '50%',
                         transform: 'translate(-50%, -50%) rotate(-90deg)',
                         width: mobile ? '170px' : '280px',
-                        height: '18px',
+                        height: '70px',
                         zIndex: 2,
                         background: 'transparent',
                         appearance: 'none',
@@ -75,49 +73,37 @@ const PainSlider: React.FC<PainSliderProps> = ({ value, onChange, isInfoOpen, ca
                     }}
                 />
                 <style>{`
-                    .pain-slider::-webkit-slider-thumb {
-                        background: transparent !important;
-                        border: none !important;
-                        box-shadow: none !important;
-                        width: 0 !important;
-                        height: 0 !important;
-                    }
-                    .pain-slider::-moz-range-thumb {
-                        background: transparent !important;
-                        border: none !important;
-                        box-shadow: none !important;
-                        width: 0 !important;
-                        height: 0 !important;
-                    }
+                    .pain-slider::-webkit-slider-thumb,
+                    .pain-slider::-moz-range-thumb,
                     .pain-slider::-ms-thumb {
-                        background: transparent !important;
-                        border: none !important;
-                        box-shadow: none !important;
-                        width: 0 !important;
-                        height: 0 !important;
+                        background: #33ff00ff;
+                        border: 2px solid #fff;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        transition: background 0.2s;
                     }
                 `}</style>
-                {/* Thumb value bubble (only show when moving) */}
-                {showValue && (
-                    <div style={{
-                        position: 'absolute',
-                        left: '50%',
-                        bottom: mobile ? `${(value/150)*190 + 2}px` : `${(value/100)*250 + 10}px`,
-                        transform: 'translateX(-50%)',
-                        background: '#222',
-                        color: '#fff',
-                        borderRadius: '50%',
-                        width: mobile ? '44px' : '56px',
-                        height: mobile ? '44px' : '56px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontWeight: 'bold',
-                        fontSize: '1.3em',
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-                        zIndex: 3,
-                    }}>{value}</div>
-                )}
+                {/* Thumb value bubble (always show, accurate position, avoid touching at min/max) */}
+                {(() => {
+                  const bubbleHeight = mobile ? 44 : 56;
+                  const sliderHeightPx = sliderHeight;
+                  const margin = 8; // px space from top/bottom
+                  let position = (value / 100) * (sliderHeightPx - bubbleHeight);
+                  if (value === 0) position = margin;
+                  return (
+                    <SliderValueBubble
+                      value={value}
+                      position={position}
+                      bubbleHeight={bubbleHeight}
+                      mobile={mobile}
+                      margin={margin}
+                      sliderHeightPx={sliderHeightPx}
+                    />
+                  );
+                })()}
                 {/* Info icon */}
             </div>
             <div style={{

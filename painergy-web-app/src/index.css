@@ -132,3 +132,72 @@ body {
   align-items: center;
   justify-content: center;
 }
+input[type=range].pain-slider::-webkit-slider-thumb,
+input[type=range].energy-slider::-webkit-slider-thumb,
+input[type=range].dilution-slider::-webkit-slider-thumb,
+input[type=range].caffeine-slider::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  /* background: #222 !important; */
+  /* border: 2px solid #fff !important; */
+  /* box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important; */
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+}
+input[type=range].pain-slider::-webkit-slider-runnable-track,
+input[type=range].energy-slider::-webkit-slider-runnable-track,
+input[type=range].dilution-slider::-webkit-slider-runnable-track,
+input[type=range].caffeine-slider::-webkit-slider-runnable-track {
+  /* background: #222 !important; */
+  height: 8px !important;
+  border-radius: 4px !important;
+}
+input[type=range].pain-slider::-moz-range-thumb,
+input[type=range].energy-slider::-moz-range-thumb,
+input[type=range].dilution-slider::-moz-range-thumb,
+input[type=range].caffeine-slider::-moz-range-thumb {
+  background: #222 !important;
+  border: 2px solid #fff !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+}
+input[type=range].pain-slider::-ms-thumb,
+input[type=range].energy-slider::-ms-thumb,
+input[type=range].dilution-slider::-ms-thumb,
+input[type=range].caffeine-slider::-ms-thumb {
+  background: #222 !important;
+  border: 2px solid #fff !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+}
+input[type=range].pain-slider::-ms-fill-lower,
+input[type=range].energy-slider::-ms-fill-lower,
+input[type=range].dilution-slider::-ms-fill-lower,
+input[type=range].caffeine-slider::-ms-fill-lower {
+  background: #222 !important;
+  border-radius: 4px !important;
+}
+input[type=range].pain-slider::-ms-fill-upper,
+input[type=range].energy-slider::-ms-fill-upper,
+input[type=range].dilution-slider::-ms-fill-upper,
+input[type=range].caffeine-slider::-ms-fill-upper {
+  background: #222 !important;
+  border-radius: 4px !important;
+}
+input[type=range].pain-slider,
+input[type=range].energy-slider,
+input[type=range].dilution-slider,
+input[type=range].caffeine-slider {
+  outline: none !important;
+}
