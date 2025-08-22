@@ -108,7 +108,7 @@ const App: React.FC = () => {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: mobile ? '-220px' : '8px',
+        marginTop: mobile ? '-180px' : '8px',
         zIndex: 2,
       }}>
         <Message
