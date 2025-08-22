@@ -9,9 +9,9 @@ import BalanceHint from './components/BalanceHint';
 
 const App: React.FC = () => {
   // Restore mobile and slider dimension variables
-  const mobile = window.innerWidth <= 480;
-  const sliderWidth = mobile ? 48 : 80;
-  const sliderHeight = mobile ? 180 : 320;
+  // const mobile = window.innerWidth <= 480;
+  // const sliderWidth = mobile ? 48 : 80;
+  // const sliderHeight = mobile ? 180 : 320;
 
   // Use custom hook for info box logic
   const {
