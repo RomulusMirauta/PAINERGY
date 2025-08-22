@@ -113,7 +113,7 @@ const App: React.FC = () => {
         marginTop: mobile ? '-150px' : '8px',
         zIndex: 2, */}
       {/* }}> */}
-        <Message
+        {/* <Message
           pain={pain}
           caffeine={caffeine}
           dilution={dilution}
@@ -124,7 +124,7 @@ const App: React.FC = () => {
           energyChanged={energyChanged}
           showDilutionWarning={showDilutionWarning}
           mobile={mobile}
-        />
+        /> */}
       {/* </div> */}
       {/* Balance hint container */}
       {/* <div style={{
