@@ -14,44 +14,44 @@ const App: React.FC = () => {
   // const sliderHeight = mobile ? 180 : 320;
 
   // Use custom hook for info box logic
-  const {
-    openInfoBoxes,
-    setOpenInfoBoxes,
-    infoBoxPositions,
-    setInfoBoxPositions,
-    handleCloseInfoBox,
-    handleToggleInfoBox,
-    getCascadeIndex,
-    handleOpenInfoBox,
-  } = useInfoBox();
-  useEffect(() => {
-    const meta = document.createElement('meta');
-    meta.name = 'viewport';
-    meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
-    document.head.appendChild(meta);
-    return () => { document.head.removeChild(meta); };
-  }, []);
+  // const {
+  //   openInfoBoxes,
+  //   setOpenInfoBoxes,
+  //   infoBoxPositions,
+  //   setInfoBoxPositions,
+  //   handleCloseInfoBox,
+  //   handleToggleInfoBox,
+  //   getCascadeIndex,
+  //   handleOpenInfoBox,
+  // } = useInfoBox();
+  // useEffect(() => {
+  //   const meta = document.createElement('meta');
+  //   meta.name = 'viewport';
+  //   meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+  //   document.head.appendChild(meta);
+  //   return () => { document.head.removeChild(meta); };
+  // }, []);
 
   // Use custom hook for slider logic
-  const {
-    pain,
-    setPain,
-    caffeine,
-    setCaffeine,
-    dilution,
-    setDilution,
-    energy,
-    setEnergy,
-    painChanged,
-    caffeineChanged,
-    dilutionChanged,
-    energyChanged,
-    showDilutionWarning,
-    handlePainChange,
-    handleCaffeineChange,
-    handleDilutionChange,
-    handleEnergyChange,
-  } = useSliderLogic();
+  // const {
+  //   pain,
+  //   setPain,
+  //   caffeine,
+  //   setCaffeine,
+  //   dilution,
+  //   setDilution,
+  //   energy,
+  //   setEnergy,
+  //   painChanged,
+  //   caffeineChanged,
+  //   dilutionChanged,
+  //   energyChanged,
+  //   showDilutionWarning,
+  //   handlePainChange,
+  //   handleCaffeineChange,
+  //   handleDilutionChange,
+  //   handleEnergyChange,
+  // } = useSliderLogic();
 
   // ...existing code for rendering sliders and messages...
   // ...existing code for return statement...
