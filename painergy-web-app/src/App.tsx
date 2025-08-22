@@ -82,7 +82,7 @@ const App: React.FC = () => {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-        <SliderGroup
+        {/* <SliderGroup
           pain={pain}
           caffeine={caffeine}
           dilution={dilution}
@@ -102,7 +102,7 @@ const App: React.FC = () => {
           handleCaffeineChange={handleCaffeineChange}
           handleDilutionChange={handleDilutionChange}
           handleEnergyChange={handleEnergyChange}
-        />
+        /> */}
       </div>
       {/* Messages container */}
       {/* <div style={{
