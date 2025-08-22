@@ -108,7 +108,7 @@ const App: React.FC = () => {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: mobile ? '-180px' : '8px',
+        marginTop: mobile ? '-150px' : '8px',
         zIndex: 2,
       }}>
         <Message
@@ -131,7 +131,7 @@ const App: React.FC = () => {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'flex-end',
-        marginTop: mobile ? '8px' : '16px',
+        marginTop: mobile ? '0px' : '16px',
         zIndex: 2,
       }}>
         <BalanceHint mobile={mobile} />
