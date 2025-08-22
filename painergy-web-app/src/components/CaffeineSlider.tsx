@@ -43,7 +43,7 @@ const CaffeineSlider: React.FC<CaffeineSliderProps> = ({ value, onChange, isInfo
                         width: '100%',
                         height: `${(value/100)*100}%`,
                         background: '#bd7237',
-                        borderRadius: value >= 99 ? '16px' : '0 0 16px 16px', // fully rounded only when fill reaches/exceeds top
+                        borderRadius: value >= 96 ? '16px' : '0 0 16px 16px', // fully rounded only when fill reaches/exceeds top
                         zIndex: 1,
                         transition: 'height 0.2s, border-radius 0.2s'
                     }} />
@@ -64,7 +64,7 @@ const CaffeineSlider: React.FC<CaffeineSliderProps> = ({ value, onChange, isInfo
                         top: '50%',
                         transform: 'translate(-50%, -50%) rotate(-90deg)',
                         width: mobile ? '170px' : '280px',
-                        height: '18px',
+                        height: '70px',
                         zIndex: 2,
                         background: 'transparent',
                         appearance: 'none',

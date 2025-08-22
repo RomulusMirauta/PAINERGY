@@ -43,7 +43,7 @@ const EnergySlider: React.FC<EnergySliderProps> = ({ value, onChange, isInfoOpen
                     width: '100%',
                     height: `${(value/100)*100}%`,
                     background: '#43b943',
-                    borderRadius: value >= 99 ? '16px' : '0 0 16px 16px', // fully rounded only when fill reaches/exceeds top
+                    borderRadius: value >= 96 ? '16px' : '0 0 16px 16px', // fully rounded only when fill reaches/exceeds top
                     zIndex: 1,
                     transition: 'height 0.2s, border-radius 0.2s'
                 }} />
@@ -63,7 +63,7 @@ const EnergySlider: React.FC<EnergySliderProps> = ({ value, onChange, isInfoOpen
                         top: '50%',
                         transform: 'translate(-50%, -50%) rotate(-90deg)',
                         width: mobile ? '170px' : '280px',
-                        height: '18px',
+                        height: '70px',
                         zIndex: 2,
                         background: 'transparent',
                         appearance: 'none',

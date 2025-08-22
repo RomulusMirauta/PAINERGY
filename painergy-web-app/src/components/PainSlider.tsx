@@ -43,7 +43,8 @@ const PainSlider: React.FC<PainSliderProps> = ({ value, onChange, isInfoOpen, ca
                     width: '100%',
                     height: `${(value/100)*100}%`,
                     background: '#f44336',
-                    borderRadius: value >= 99 ? '16px' : '0 0 16px 16px',
+                    // borderRadius: value >= 99 ? '16px' : '0 0 16px 16px',
+                    borderRadius: value >= 96 ? '16px' : '0 0 16px 16px',
                     zIndex: 1,
                     transition: 'height 0.2s, border-radius 0.2s'
                 }} />
@@ -72,20 +73,6 @@ const PainSlider: React.FC<PainSliderProps> = ({ value, onChange, isInfoOpen, ca
                         WebkitAppearance: 'none',
                     }}
                 />
-                <style>{`
-                    .pain-slider::-webkit-slider-thumb,
-                    .pain-slider::-moz-range-thumb,
-                    .pain-slider::-ms-thumb {
-                        background: #33ff00ff;
-                        border: 2px solid #fff;
-                        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-                        width: 32px;
-                        height: 32px;
-                        border-radius: 50%;
-                        cursor: pointer;
-                        transition: background 0.2s;
-                    }
-                `}</style>
                 {/* Thumb value bubble (always show, accurate position, avoid touching at min/max) */}
                 {(() => {
                   const bubbleHeight = mobile ? 44 : 56;
