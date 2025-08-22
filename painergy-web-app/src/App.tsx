@@ -69,11 +69,11 @@ const App: React.FC = () => {
       position: 'relative',
     }}>
       {/* Logo container at the very top, centered */}
-      <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: mobile ? '8px' : '8px', marginBottom: mobile ? '0px' : '32px' }}>
+      {/* <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: mobile ? '8px' : '8px', marginBottom: mobile ? '0px' : '32px' }}>
         <img src={require('./img/logo.png')} alt="Painergy Logo" style={{ maxWidth: mobile ? '320px' : '600px', width: mobile ? '95vw' : '200%', height: mobile ? 'auto' : 'auto' }} />
-      </div>
+      </div> */}
       {/* Sliders container centered in the middle of the display */}
-      <div style={{
+      {/* <div style={{
         width: '100%',
         // flex: 1,
         height: mobile ? 'calc(90vh - 160px)' : 'calc(80vh - 160px)', // adjust 160px if needed for logo height/margin
@@ -81,7 +81,7 @@ const App: React.FC = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-      }}>
+      }}> */}
         {/* <SliderGroup
           pain={pain}
           caffeine={caffeine}
@@ -103,7 +103,7 @@ const App: React.FC = () => {
           handleDilutionChange={handleDilutionChange}
           handleEnergyChange={handleEnergyChange}
         /> */}
-      </div>
+      {/* </div> */}
       {/* Messages container */}
       {/* <div style={{
         width: '100%',
