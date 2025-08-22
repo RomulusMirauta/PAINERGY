@@ -105,14 +105,14 @@ const App: React.FC = () => {
         />
       </div>
       {/* Messages container */}
-      <div style={{
+      {/* <div style={{
         width: '100%',
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
         marginTop: mobile ? '-150px' : '8px',
-        zIndex: 2,
-      }}>
+        zIndex: 2, */}
+      {/* }}> */}
         <Message
           pain={pain}
           caffeine={caffeine}
@@ -125,7 +125,7 @@ const App: React.FC = () => {
           showDilutionWarning={showDilutionWarning}
           mobile={mobile}
         />
-      </div>
+      {/* </div> */}
       {/* Balance hint container */}
       {/* <div style={{
         width: '100%',
@@ -139,8 +139,8 @@ const App: React.FC = () => {
         zIndex: 1,
       }}> */}
         {/* <BalanceHint mobile={mobile} /> */}
-      {/* </div> */}
-    </div>
+      </div>
+    // </div>
   );
 
 }
