@@ -57,19 +57,19 @@ const App: React.FC = () => {
   // ...existing code for return statement...
   return (
     <div style={{
-      minHeight: mobile ? '90vh' : '90vh',
+      minHeight: mobile ? '100vh' : '90vh',
       width: '100vw',
       maxWidth: mobile ? '100vw' : '480px',
       // maxHeight: mobile ? '10vw' : '48px',
       margin: '0 auto',
-      padding: mobile ? '4px' : '16px',
+      // padding: mobile ? '4px' : '16px',
       // boxSizing: 'border-box',
       boxSizing: 'content-box',
       // background: '#10131a', // THIS CAUSED THE SHADOW-LIKE BACKGROUND ISSUE
       position: 'relative',
     }}>
       {/* Logo container at the very top, centered */}
-      <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: mobile ? '8px' : '32px', marginBottom: mobile ? '0px' : '32px' }}>
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: mobile ? '8px' : '8px', marginBottom: mobile ? '0px' : '32px' }}>
         <img src={require('./img/logo.png')} alt="Painergy Logo" style={{ maxWidth: mobile ? '320px' : '600px', width: mobile ? '95vw' : '200%', height: mobile ? 'auto' : 'auto' }} />
       </div>
       {/* Sliders container centered in the middle of the display */}
