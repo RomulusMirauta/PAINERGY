@@ -7,7 +7,7 @@ interface BalanceHintProps {
 const BalanceHint: React.FC<BalanceHintProps> = ({ mobile }) => (
   <div style={{
     position: 'fixed',
-    right: mobile?'30px':'48px',
+    right: mobile?undefined:'48px',
     bottom: mobile?'30px':'48px',
     background: 'rgba(251, 247, 235, 0.95)',
     color: '#6d4c41',
