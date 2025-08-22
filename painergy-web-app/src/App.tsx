@@ -57,16 +57,16 @@ const App: React.FC = () => {
   // ...existing code for return statement...
   return (
     <div style={{
-      minHeight: mobile ? '100vh' : '90vh',
-      width: '100vw',
-      maxWidth: mobile ? '100vw' : '480px',
-      // maxHeight: mobile ? '10vw' : '48px',
-      margin: '0 auto',
-      // padding: mobile ? '4px' : '16px',
-      // boxSizing: 'border-box',
-      boxSizing: 'content-box',
-      // background: '#004cffff', // THIS CAUSED THE SHADOW-LIKE BACKGROUND ISSUE
-      position: 'relative',
+    //   minHeight: mobile ? '100vh' : '90vh',
+    //   width: '100vw',
+    //   maxWidth: mobile ? '100vw' : '480px',
+    //   // maxHeight: mobile ? '10vw' : '48px',
+    //   margin: '0 auto',
+    //   // padding: mobile ? '4px' : '16px',
+    //   // boxSizing: 'border-box',
+    //   boxSizing: 'content-box',
+    //   // background: '#004cffff', // THIS CAUSED THE SHADOW-LIKE BACKGROUND ISSUE
+    //   position: 'relative',
     }}>
       {/* Logo container at the very top, centered */}
       {/* <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: mobile ? '8px' : '8px', marginBottom: mobile ? '0px' : '32px' }}>
@@ -139,8 +139,8 @@ const App: React.FC = () => {
         zIndex: 1,
       }}> */}
         {/* <BalanceHint mobile={mobile} /> */}
-      </div>
-    // </div>
+      {/* </div> */}
+     </div>
   );
 
 }
