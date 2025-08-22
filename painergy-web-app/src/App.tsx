@@ -127,7 +127,7 @@ const App: React.FC = () => {
         />
       </div>
       {/* Balance hint container */}
-      <div style={{
+      {/* <div style={{
         width: '100%',
         display: 'flex',
         flexDirection: 'row',
@@ -137,9 +137,9 @@ const App: React.FC = () => {
         overflow: 'hidden',
         maxHeight: mobile ? '20px' : '1px',
         zIndex: 1,
-      }}>
+      }}> */}
         {/* <BalanceHint mobile={mobile} /> */}
-      </div>
+      {/* </div> */}
     </div>
   );
 
