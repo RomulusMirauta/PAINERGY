@@ -65,7 +65,7 @@ const App: React.FC = () => {
       // padding: mobile ? '4px' : '16px',
       // boxSizing: 'border-box',
       boxSizing: 'content-box',
-      // background: '#10131a', // THIS CAUSED THE SHADOW-LIKE BACKGROUND ISSUE
+      // background: '#004cffff', // THIS CAUSED THE SHADOW-LIKE BACKGROUND ISSUE
       position: 'relative',
     }}>
       {/* Logo container at the very top, centered */}
@@ -130,12 +130,12 @@ const App: React.FC = () => {
       <div style={{
         width: '100%',
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: mobile ? '8px' : '16px',
+        marginTop: mobile ? '8px' : '1px',
         overflow: 'hidden',
-        maxHeight: mobile ? '20px' : '20px',
+        maxHeight: mobile ? '20px' : '1px',
         zIndex: 2,
       }}>
         <BalanceHint mobile={mobile} />
