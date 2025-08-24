@@ -50,7 +50,7 @@
 ## AI info
 - The code was written with the help of Copilot (GPT-4.1)
 - The logo was AI-generated with Gemini (v2.5 Pro + "Images with Imagen")
-- Logo background was removed with Galaxy AI (Samsung Galaxy S25 Plus)
+- Logo editing (even the background removal process) was done with Galaxy AI (Samsung Galaxy S25 Plus)
 
 <br>
 
