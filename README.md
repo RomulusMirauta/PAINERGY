@@ -71,8 +71,6 @@
 
 <br>
 
-<hr>
-
 <br>
 
 ## AI info
@@ -103,4 +101,5 @@
 - Microsoft PowerToys - modules: Workspaces, Color Picker
 - Google Chrome - DevTools
 - Notepad++
+
 
