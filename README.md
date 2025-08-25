@@ -47,6 +47,13 @@
 
 <br>
 
+## AI info
+- The code was written with the help of Copilot (GPT-4.1)
+- The logo was AI-generated with Gemini (v2.5 Pro + "Images with Imagen")
+- Logo editing (even the background removal process) was done with Galaxy AI (Samsung Galaxy S25 Plus)
+
+<br>
+
 ## Main technologies used in building this app
 - React (with TypeScript)
 - HTML5 & CSS3 (inline styles and custom styling)
@@ -56,8 +63,15 @@
 - Modern ES6+ features (hooks, functional components)
 - Custom component architecture (PainSlider, CaffeineSlider, DilutionSlider, EnergySlider)
 
-
-
-
-
-
+## SW info
+- Microsoft Visual Studio Code + extensions:
+  - GitHub Copilot
+  - GitHub Copilot Chat
+  - HTML Format
+  - Markdown All in One
+  - PowerShell
+- Git Bash
+- GitHub Desktop
+- Microsoft PowerToys - modules: Workspaces, Color Picker
+- Google Chrome - DevTools
+- Notepad++
