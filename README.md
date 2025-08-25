@@ -13,7 +13,7 @@
 <br>
 
 ## **Purposes** <br>
-### - Training - creating my first web app. <br> - Creating an app that can help people manage their stomach ache, by finding the balance between pain intensity, caffeine intake, required dilution and desired energy.
+### - Self-training - creating my first web app. <br> - Creating an app that can help people manage their stomach ache, by finding the balance between pain intensity, caffeine intake, required dilution and desired energy.
 
 <br>
 
@@ -22,6 +22,8 @@
 ### Check out the live app here: [https:/painergy.vercel.app/](https://painergy.vercel.app/)
 
 ### Here are some app screenshots:
+
+#### NEW
 
 <a href="https://raw.githubusercontent.com/RomulusMirauta/PAINERGY/refs/heads/main/github/img/app_screenshot1.png">
   <img align="center"
@@ -38,6 +40,32 @@
 <a href="https://raw.githubusercontent.com/RomulusMirauta/PAINERGY/refs/heads/main/github/img/app_screenshot2.png">
   <img align="center"
     src="https://raw.githubusercontent.com/RomulusMirauta/PAINERGY/refs/heads/main/github/img/app_screenshot2.png"
+    alt="logo" />
+</a>
+
+<br>
+
+<br>
+
+
+#### OLD
+
+
+<a href="https://raw.githubusercontent.com/RomulusMirauta/PAINERGY/refs/heads/main/github/img/app_screenshot1.png">
+  <img align="center"
+    src="https://raw.githubusercontent.com/RomulusMirauta/PAINERGY/refs/heads/main/github/img/old_app_screenshot1.png"
+    alt="logo" />
+</a>
+
+<br>
+
+<hr>
+
+<br>
+
+<a href="https://raw.githubusercontent.com/RomulusMirauta/PAINERGY/refs/heads/main/github/img/app_screenshot2.png">
+  <img align="center"
+    src="https://raw.githubusercontent.com/RomulusMirauta/PAINERGY/refs/heads/main/github/img/old_app_screenshot2.png"
     alt="logo" />
 </a>
 
@@ -75,3 +103,4 @@
 - Microsoft PowerToys - modules: Workspaces, Color Picker
 - Google Chrome - DevTools
 - Notepad++
+
