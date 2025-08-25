@@ -135,8 +135,9 @@ const App: React.FC = () => {
         justifyContent: 'center',
         marginTop: mobile ? '8px' : '1px',
         overflow: 'hidden',
+        position: 'relative',
         // maxHeight: mobile ? '20px' : '1px',
-        zIndex: 1,
+        zIndex: -1, // Ensure it stays behind all other elements
       }}>
         <BalanceHint mobile={mobile} />
       </div>
