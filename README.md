@@ -13,7 +13,7 @@
 <br>
 
 ## **Purposes** <br>
-### - Self-training - creating my first web app. <br> - Creating an app that can help people manage their stomach ache, by finding the balance between pain intensity, caffeine intake, required dilution and desired energy.
+### - Self-training - creating my first web app <br> - Finding AI limitations, solutions and workarounds <br> - Creating an app that can help people manage their stomach ache, by finding the balance between pain intensity, caffeine intake, required dilution and desired energy
 
 <br>
 
@@ -101,5 +101,6 @@
 - Microsoft PowerToys - modules: Workspaces, Color Picker
 - Google Chrome - DevTools
 - Notepad++
+
 
 
