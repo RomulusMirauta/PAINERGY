@@ -10,14 +10,21 @@
 
 </h6>
 
+## Table of Contents
+I. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Purposes](https://github.com/RomulusMirauta/PAINERGY/tree/main#purposes-) <br>
+II. &nbsp;&nbsp;&nbsp;&nbsp;[DEMO](https://github.com/RomulusMirauta/PAINERGY/tree/main#demo) <br>
+III. &nbsp;&nbsp;&nbsp;[AI info](https://github.com/RomulusMirauta/PAINERGY/tree/main#ai-info) <br>
+IV. &nbsp;&nbsp;&nbsp;[Main technologies](https://github.com/RomulusMirauta/PAINERGY/tree/main#main-technologies-used-in-building-this-app) <br>
+V. &nbsp;&nbsp;&nbsp;&nbsp;[SW info](https://github.com/RomulusMirauta/PAINERGY/tree/main#sw-info) <br>
+
 <br>
 
-## **Purposes** <br>
+## **I. Purposes** <br>
 ### - Self-training - creating my first web app <br> - Finding AI limitations, solutions and workarounds <br> - Creating an app that can help people manage their stomach ache, by finding the balance between pain intensity, caffeine intake, required dilution and desired energy
 
 <br>
 
-## DEMO
+## II. DEMO
 
 ### Check out the live app here: [https:/painergy.vercel.app/](https://painergy.vercel.app/)
 
@@ -73,14 +80,14 @@
 
 <br>
 
-## AI info
+## III. AI info
 - The code was written with the help of Copilot (GPT-4.1)
 - The logo was AI-generated with Gemini (v2.5 Pro + "Images with Imagen")
 - Logo editing (even the background removal process) was done with Galaxy AI (Samsung Galaxy S25 Plus)
 
 <br>
 
-## Main technologies used in building this app
+## IV. Main technologies used in building this app
 - React (with TypeScript)
 - HTML5 & CSS3 (inline styles and custom styling)
 - JavaScript/TypeScript (for logic and components)
@@ -89,7 +96,7 @@
 - Modern ES6+ features (hooks, functional components)
 - Custom component architecture (PainSlider, CaffeineSlider, DilutionSlider, EnergySlider)
 
-## SW info
+## V. SW info
 - Microsoft Visual Studio Code + extensions:
   - GitHub Copilot
   - GitHub Copilot Chat
@@ -101,6 +108,3 @@
 - Microsoft PowerToys - modules: Workspaces, Color Picker
 - Google Chrome - DevTools
 - Notepad++
-
-
-
